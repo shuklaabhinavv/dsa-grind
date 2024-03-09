@@ -24,8 +24,10 @@ By making my progress public, I hope to contribute to the learning community and
 ## Stay Connected:
 Let's connect on LinkedIn and grow together in our DSA journey.
 
-[LeetCode](https://leetcode.com/abhinav24shukla08/),
+[LeetCode](https://leetcode.com/abhinav24shukla08/)
 
-[LinkedIn](https://www.linkedin.com/in/abhinavshu/).
+[LinkedIn](https://www.linkedin.com/in/abhinavshu/)
+
+[Google Sheets](https://docs.google.com/spreadsheets/d/14Bx9OZGgr9qiGw1saogHev7usK2lgoiED4-4fSMgJ9I/edit?usp=sharing)
 
 # Peace Out ☮️
