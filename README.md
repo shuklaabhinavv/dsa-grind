@@ -21,6 +21,9 @@ Explore the "LeetCode" folder for categorized solutions, by using the name of th
 ## Why Open Source?
 By making my progress public, I hope to contribute to the learning community and receive feedback from fellow enthusiasts. Feel free to open issues, suggest improvements, or just drop by to say hello!
 
+## What it Contains?
+This repository contains all of the pracctice and Question of the Day i solved personally, from 25 July, 2024 onwards.
+
 ## Stay Connected:
 Let's connect on LinkedIn and grow together in our DSA journey.
 
