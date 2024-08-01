@@ -1,11 +1,16 @@
 class Solution {
 public:
-    int minimumDeletions(string s) {
+    int minimumDeletions(string s) 
+    {
         int res = 0, count = 0;
-        for (char c : s){
+        for (char c : s)
+        {
             if (c == 'b')
+            {
                 count++;
-            else if (count){
+            }
+            else if (c == 'a' && count)
+            {
                 res++;
                 count--;
             }
