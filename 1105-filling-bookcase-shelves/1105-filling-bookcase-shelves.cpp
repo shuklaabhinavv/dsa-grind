@@ -1,23 +1,28 @@
 class Solution {
 public:
-    int minHeightShelves(std::vector<std::vector<int>>& books, int shelfWidth) {
-        int n = books.size();
-        vector<int> dp(n + 1, INT_MAX);
-        dp[0] = 0;
-        
-        for (int i = 1; i <= n; ++i) {
-            int total_width = 0;
-            int max_height = 0;
-            for (int j = i; j > 0; --j) {
-                total_width += books[j-1][0];
-                if (total_width > shelfWidth) {
-                    break;
-                }
-                max_height = max(max_height, books[j-1][1]);
-                dp[i] = min(dp[i], dp[j-1] + max_height);
-            }
+    int solve(int i, vector<vector<int>>& books, int remainingWidth, int shelfWidth, int currentHeight, vector<vector<int>>& dp) {
+        if (i == books.size()) 
+        {
+            return currentHeight; 
         }
-        
-        return dp[n];
+        if (dp[i][remainingWidth] != -1)
+        {
+            return dp[i][remainingWidth]; 
+        } 
+        int curWidth = books[i][0];
+        int curHeight = books[i][1];
+        int take = INT_MAX;
+        if (remainingWidth >= curWidth) 
+        {
+            take = solve(i + 1, books, remainingWidth - curWidth, shelfWidth, max(currentHeight, curHeight), dp);
+        }
+        int nottake = currentHeight + solve(i + 1, books, shelfWidth - curWidth, shelfWidth, curHeight, dp);
+        dp[i][remainingWidth] = min(take, nottake);
+        return dp[i][remainingWidth];
+    }
+    int minHeightShelves(vector<vector<int>>& books, int shelfWidth) {
+        int n = books.size();
+        vector<vector<int>> dp(n, vector<int>(shelfWidth + 1, -1)); 
+        return solve(0, books, shelfWidth, shelfWidth, 0, dp);
     }
 };
