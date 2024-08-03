@@ -3,15 +3,14 @@ public:
     bool canBeEqual(vector<int>& target, vector<int>& arr) {
         int n=arr.size();
         unordered_map<int,int>m;
-        unordered_map<int,int>mt;
         for(int i=0;i<n;i++)
         {
             m[arr[i]]++;
-            mt[target[i]]++;
+            m[target[i]]--;
         }
         for(auto x : m)
         {
-            if(mt[x.first]!=x.second)
+            if(x.second!=0)
             {
                 return false;
             }
