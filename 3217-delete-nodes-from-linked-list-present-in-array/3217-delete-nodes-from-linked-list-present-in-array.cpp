@@ -25,10 +25,7 @@ public:
             {
                 if(prev==curr)
                 {
-                    if(head==curr)
-                    {
-                        head=head->next;
-                    }
+                    head=head->next;
                     curr=curr->next;
                     prev=curr;
                 }
