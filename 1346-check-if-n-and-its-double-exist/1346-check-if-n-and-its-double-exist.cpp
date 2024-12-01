@@ -1,10 +1,22 @@
 class Solution {
 public:
     bool checkIfExist(vector<int>& arr) {
-        map<int,int>m;
+        unordered_map<int,int>m;
+        int c=0;
         for(int i=0;i<arr.size();i++)
         {
-            m[arr[i]]=i;
+            if(arr[i]==0)
+            {
+                c++;
+                if(c==2)
+                {
+                    return true;
+                }
+            }
+            else
+            {
+                m[arr[i]]=i;
+            }
         }
         for(auto x:m)
         {
