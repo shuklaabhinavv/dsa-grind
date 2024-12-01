@@ -1,32 +1,30 @@
 class Solution {
 public:
-    bool checkIfExist(vector<int>& arr) {
-        unordered_map<int,int>m;
-        int c=0;
-        for(int i=0;i<arr.size();i++)
+    bool checkIfExist(vector<int>& arr) 
+    {
+        int n=arr.size();
+        sort(arr.begin(),arr.end());
+        for(int i=0;i<n;i++)
         {
-            if(arr[i]==0)
+            int key=arr[i]*2;
+            int s=0;
+            int e=n-1;
+            while(s<=e)
             {
-                c++;
-                if(c==2)
+                int m=s+((e-s)/2);
+                if(arr[m]==key&&m!=i)
                 {
                     return true;
                 }
-            }
-            else
-            {
-                m[arr[i]]=i;
-            }
-        }
-        for(auto x:m)
-        {
-            if(m.find(x.first*2)!=m.end())
-            {
-                if(x.second!=m[x.first*2])
+                else if(arr[m]>key)
                 {
-                    return true;
+                    e=m-1;
                 }
-            }
+                else
+                {
+                    s=m+1;
+                }
+            }      
         }
         return false;
     }
