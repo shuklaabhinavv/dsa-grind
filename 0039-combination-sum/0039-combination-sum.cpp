@@ -7,21 +7,19 @@ public:
             if(target==0)
             {
                 ans.push_back(ds);
-             
             }
             return;
         }
-            else
+        else
+        {
+            if(candidates[i]<=target)
             {
-                if(candidates[i]<=target)
-                {
-                    ds.push_back(candidates[i]);
-                    findcom(candidates,ds,ans,target-candidates[i],i);
-                    ds.pop_back();
-                }
-                findcom(candidates,ds,ans,target,i+1);
+                ds.push_back(candidates[i]);
+                findcom(candidates,ds,ans,target-candidates[i],i);
+                ds.pop_back();
             }
-        
+            findcom(candidates,ds,ans,target,i+1);
+        }  
     }
     vector<vector<int>> combinationSum(vector<int>& candidates, int target) 
     {
