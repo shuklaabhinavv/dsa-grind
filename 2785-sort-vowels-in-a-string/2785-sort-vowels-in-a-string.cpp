@@ -11,11 +11,11 @@ public:
                 s[i]='$'; 
             }
         }
-        // if(m.size()==s.length())
-        // {
-        //     sort(s.begin(),s.end());
-        //     return s;
-        // }
+        if(m.size()==s.length())
+        {
+            sort(m.begin(),m.end());
+            return m;
+        }
         sort(m.begin(),m.end());
         for(auto x:m)
         {
